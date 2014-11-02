@@ -1,0 +1,18 @@
+﻿function Person() {
+  this.MyName = 'YourName';
+};
+
+Person.prototype.MyFunction = function(NewName, NewSurname, NewAge) {
+  this.MyName = NewName;
+  this.MySurname = NewSurname;
+  this.MyAge = NewAge;
+};
+
+var student_1 = new Person();
+student_1.MyFunction('Vasya', 'Ivanov', '19');
+
+var student_2 = new Person();
+student_2.MyFunction('Petya', 'Stepanov', '20'); 
+
+var student_3 = new Person();
+student_3.MyFunction('Gosha', 'Abdulov', '21');
