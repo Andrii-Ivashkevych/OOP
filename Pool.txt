@@ -1,0 +1,46 @@
+﻿//Конструктор родительского класса
+
+function Animal(name) {
+  this.name = name;
+};
+
+Animal.prototype.speak = function() {
+  alert(this.name + ' says:');
+};
+
+---//---//---//---//---//---//---//---
+
+//Конструктор унаследованного класса
+
+function Dog(name) {
+  Animal.call(this, name);
+};
+
+Dog.prototype.speak = function() {
+  Animal.prototype.speak.call(this);
+  alert('woof');
+};
+
+//Создание экземпляра и вызов
+
+var d = new Dog('Max');
+d.speak();
+
+---//---//---//---//---//---//---//---
+
+
+//Конструктор унаследованного класса
+
+function Cat(name) {
+  Animal.call(this, name);
+};
+
+Dog.prototype.speak = function() {
+  Animal.prototype.speak.call(this);
+  alert('miaow');
+};
+
+//Создание экземпляра и вызов
+
+var c = new Cat('Luci');
+d.speak();
