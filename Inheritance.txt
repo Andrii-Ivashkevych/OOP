@@ -1,0 +1,58 @@
+//Наследование
+//Конструктор родительского класса
+
+function Animal(name) {
+  this.name = name;
+};
+
+
+
+//Контсруктор унаследованного класса
+
+function Dog(name) {
+  Animal.call(this, name);
+};
+
+Dog.prototype = new Animal();
+
+Dog.prototype.ChangeName(newname) {
+  this.name = newname;
+};
+
+
+
+//Наследование методов
+
+//Конструктор родительского класса
+
+function Animal(name) {
+  this.name = name;
+};
+
+
+//Метод родительского класса
+
+Animal.prototype.alertName = function() {
+  alert(this.name);
+};
+
+//Конструктор унаследованного класса
+
+function Dog(name) {
+  Animal.call(this, name);
+  this.collarText;
+};
+
+Dog.prototype = new Animal();
+
+Dog.prototype.setCollarText = function(text) {
+  this.collarText = text;
+};
+
+//Вызов унаследованного метода
+
+var d = new Dog('Fido');
+d.name;
+
+
+//
